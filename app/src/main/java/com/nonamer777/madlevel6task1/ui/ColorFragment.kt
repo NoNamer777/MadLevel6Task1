@@ -1,10 +1,11 @@
-package com.nonamer777.madlevel6task1
+package com.nonamer777.madlevel6task1.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.nonamer777.madlevel6task1.R
 
 /**
  * A [Fragment] subclass where Users can touch a color and see what that color's name is.

@@ -1,7 +1,8 @@
-package com.nonamer777.madlevel6task1
+package com.nonamer777.madlevel6task1.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.nonamer777.madlevel6task1.R
 
 class MainActivity: AppCompatActivity() {
 

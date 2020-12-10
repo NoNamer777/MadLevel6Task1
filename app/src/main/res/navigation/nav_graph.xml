@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/colorFragment"
-        android:name="com.nonamer777.madlevel6task1.ColorFragment"
+        android:name="com.nonamer777.madlevel6task1.ui.ColorFragment"
         android:label="fragment_color"
         tools:layout="@layout/fragment_color" />
 </navigation>
