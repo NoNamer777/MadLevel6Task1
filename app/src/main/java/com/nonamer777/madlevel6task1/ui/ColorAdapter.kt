@@ -10,7 +10,7 @@ import com.nonamer777.madlevel6task1.R
 import com.nonamer777.madlevel6task1.databinding.ItemColorBinding
 import com.nonamer777.madlevel6task1.model.ColorItem
 
-class ColorAdapter(private val colors: List<ColorItem>):
+class ColorAdapter(private val colors: List<ColorItem>, private val onClick: (ColorItem) -> Unit):
     RecyclerView.Adapter<ColorAdapter.ViewHolder>() {
 
     private lateinit var context: Context
@@ -18,6 +18,10 @@ class ColorAdapter(private val colors: List<ColorItem>):
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
         private val binding = ItemColorBinding.bind(itemView)
+
+        init {
+            itemView.setOnClickListener { onClick(colors[adapterPosition]) }
+        }
 
         fun bind(colorItem: ColorItem) {
             Glide.with(context).load(colorItem.getImageUrl()).into(binding.colorImage)
