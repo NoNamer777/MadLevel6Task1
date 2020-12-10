@@ -7,6 +7,6 @@ data class ColorItem(
     var name: String
 ) {
 
-    fun getImageUrl() = "http://singlecolorimage/com/get/$hexadecimal/1080x1080"
+    fun getImageUrl() = "http://singlecolorimage.com/get/$hexadecimal/1080x1080"
 }
 
