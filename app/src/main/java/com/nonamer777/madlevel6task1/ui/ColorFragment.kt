@@ -5,12 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
-import com.nonamer777.madlevel6task1.R
 import com.nonamer777.madlevel6task1.databinding.FragmentColorBinding
 import com.nonamer777.madlevel6task1.model.ColorItem
+import com.nonamer777.madlevel6task1.model.ColorItemViewModel
 
 /**
  * A [Fragment] subclass where Users can touch a color and see what that color's name is.
@@ -22,6 +23,8 @@ class ColorFragment: Fragment() {
     private val colors = arrayListOf<ColorItem>()
 
     private val colorAdapter = ColorAdapter(colors, ::onColorClick)
+
+    private val colorItemViewModel: ColorItemViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,6 +58,10 @@ class ColorFragment: Fragment() {
     }
 
     private fun observeColors() {
-        
+        colorItemViewModel.colorItems.observe(viewLifecycleOwner, {
+            colors.clear()
+            colors.addAll(it)
+            colorAdapter.notifyDataSetChanged()
+        })
     }
 }
