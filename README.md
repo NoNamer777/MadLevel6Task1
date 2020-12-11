@@ -1,4 +1,4 @@
-# MAD - Level 6: Example
+# MAD - Level 6: Task 1
 
 This Mobile Application is developed as part of the introduction to the Mobile Application Development at HvA.
 The application is used as an introduction to external API calls using OkHttp and Retrofit.
